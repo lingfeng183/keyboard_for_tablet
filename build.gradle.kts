@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        google()
+        maven { url = uri("https://maven.google.com") }
         mavenCentral()
     }
     dependencies {
@@ -16,7 +16,7 @@ plugins {
 
 allprojects {
     repositories {
-        google()
+        maven { url = uri("https://maven.google.com") }
         mavenCentral()
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
         maven { url = uri("https://jitpack.io") }
