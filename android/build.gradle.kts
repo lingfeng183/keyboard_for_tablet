@@ -5,6 +5,9 @@ plugins {
 
 val gdxVersion: String by rootProject.extra
 
+// Natives helper configuration
+val natives: Configuration by configurations.creating
+
 android {
     namespace = "com.lingfeng.billiards"
     compileSdk = 33
@@ -34,6 +37,11 @@ android {
 }
 
 dependencies {
+    // Define natives extension function
+    fun DependencyHandlerScope.natives(notation: String) {
+        add("natives", notation)
+    }
+    
     implementation(project(":core"))
     implementation(kotlin("stdlib"))
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
@@ -42,9 +50,6 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")
 }
-
-// Natives helper configuration
-val natives: Configuration by configurations.creating
 
 tasks.register("copyAndroidNatives") {
     doFirst {
