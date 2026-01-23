@@ -37,7 +37,6 @@ dependencies {
     implementation(project(":core"))
     implementation(kotlin("stdlib"))
     implementation("com.badlogicgames.gdx:gdx-backend-android:$gdxVersion")
-    natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")

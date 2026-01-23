@@ -129,7 +129,7 @@ When the GitHub Actions workflow completes successfully:
 - **Kotlin:** 1.9.21
 - **Gradle:** 8.5
 - **Android Gradle Plugin:** 8.1.4
-- **Target SDK:** 33
+- **Target SDK:** 34
 - **Min SDK:** 21
 
 ## Future Enhancements
