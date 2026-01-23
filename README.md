@@ -56,11 +56,11 @@ This branch contains the initial billiards prototype implemented by @copilot.
 ## Building Locally
 
 ### Prerequisites
-- JDK 11 or 17
+- JDK 17
 - Android SDK with:
   - Platform tools
-  - Build tools 33.x
-  - Android API 33 (targetSdk)
+  - Build tools 34.x
+  - Android API 34 (compileSdk/targetSdk)
   - Minimum API 21 (minSdk)
 
 ### Build Commands

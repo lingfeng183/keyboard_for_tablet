@@ -1,5 +1,7 @@
 buildscript {
     repositories {
+        maven { url = uri("/usr/local/lib/android/sdk/extras/google/m2repository") }
+        maven { url = uri("/usr/local/lib/android/sdk/extras/android/m2repository") }
         maven { url = uri("https://maven.google.com") }
         mavenCentral()
     }
@@ -16,6 +18,8 @@ plugins {
 
 allprojects {
     repositories {
+        maven { url = uri("/usr/local/lib/android/sdk/extras/google/m2repository") }
+        maven { url = uri("/usr/local/lib/android/sdk/extras/android/m2repository") }
         maven { url = uri("https://maven.google.com") }
         mavenCentral()
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }

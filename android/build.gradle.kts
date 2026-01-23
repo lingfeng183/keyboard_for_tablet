@@ -7,12 +7,12 @@ val gdxVersion: String by rootProject.extra
 
 android {
     namespace = "com.lingfeng.billiards"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.lingfeng.billiards"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
