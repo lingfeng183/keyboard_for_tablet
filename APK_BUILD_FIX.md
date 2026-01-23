@@ -35,6 +35,16 @@
 - **变更**: 添加本地 Android SDK Maven 仓库路径，优先使用本地仓库
 - **原因**: 在可能的情况下，优先使用本地缓存的依赖，减少网络依赖
 
+### 5. 移除过时的架构支持
+- **文件**: `android/build.gradle.kts`
+- **变更**: 移除 `natives-armeabi-v7a` 依赖
+- **原因**: armeabi-v7a 架构已过时，现代 Android 设备主要使用 arm64-v8a
+
+### 6. 添加工作流安全权限
+- **文件**: `.github/workflows/android-build.yml`
+- **变更**: 添加显式的 `permissions` 配置
+- **原因**: 遵循最小权限原则，提高安全性
+
 ## APK 构建方法
 
 ### 方法 1: GitHub Actions (推荐)
@@ -55,6 +65,8 @@ android/build/outputs/apk/debug/android-debug.apk
 - ✅ 代码已更新并推送
 - ✅ 工作流配置已修复
 - ✅ 文档已更新
+- ✅ 代码审查反馈已处理
+- ✅ 安全检查已通过
 - ⏳ 等待 GitHub Actions 工作流执行（需要仓库管理员批准首次运行）
 
 ## 下一步
