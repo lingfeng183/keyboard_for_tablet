@@ -56,11 +56,11 @@ This branch contains the initial billiards prototype implemented by @copilot.
 ## Building Locally
 
 ### Prerequisites
-- JDK 11 or 17
+- JDK 11 or 17  
 - Android SDK with:
   - Platform tools
-  - Build tools 33.x
-  - Android API 33 (targetSdk)
+  - Build tools 34.x
+  - Android API 34 (compileSdk/targetSdk)
   - Minimum API 21 (minSdk)
 
 ### Build Commands
@@ -79,6 +79,35 @@ This branch contains the initial billiards prototype implemented by @copilot.
 The debug APK will be generated at:
 ```
 android/build/outputs/apk/debug/android-debug.apk
+```
+
+### Troubleshooting
+
+**Issue: "Could not resolve com.android.tools.build:gradle" or "Could not GET ... dl.google.com"**
+
+This error occurs when the Gradle build system cannot access Google's Maven repository. Solutions:
+
+1. **Check your internet connection** - Ensure you can access `https://dl.google.com`
+2. **Configure proxy** - If behind a corporate proxy, configure gradle.properties:
+   ```properties
+   systemProp.http.proxyHost=proxy.company.com
+   systemProp.http.proxyPort=8080
+   systemProp.https.proxyHost=proxy.company.com
+   systemProp.https.proxyPort=8080
+   ```
+3. **Use GitHub Actions** - If local build fails, push to GitHub and let CI build the APK for you (see "Downloading Pre-built APK" section below)
+4. **VPN/Network restrictions** - Some networks block dl.google.com. Try a different network or use a VPN
+
+**Issue: "Android SDK Platform 34 not found"**
+
+Install the required SDK components:
+```bash
+# Using SDK Manager
+$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
+# Or using Android Studio
+# File > Settings > Appearance & Behavior > System Settings > Android SDK
+# Check "Android 14.0 (API 34)" and install
 ```
 
 ## Downloading Pre-built APK

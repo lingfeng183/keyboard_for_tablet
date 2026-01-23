@@ -5,14 +5,17 @@ plugins {
 
 val gdxVersion: String by rootProject.extra
 
+// Natives helper configuration - must be defined before dependencies
+val natives: Configuration by configurations.creating
+
 android {
     namespace = "com.lingfeng.billiards"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.lingfeng.billiards"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -42,9 +45,6 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")
 }
-
-// Natives helper configuration
-val natives: Configuration by configurations.creating
 
 tasks.register("copyAndroidNatives") {
     doFirst {
