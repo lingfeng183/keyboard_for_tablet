@@ -5,6 +5,7 @@ on:
     branches:
       - feat/billiards-libgdx-prototype
       - feat/billiards-libgdx-prototype-*
+      - copilot/**
   pull_request:
     branches:
       - main
